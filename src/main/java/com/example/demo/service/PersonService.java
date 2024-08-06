@@ -7,6 +7,8 @@ import org.springframework.stereotype.Service;
 import com.example.demo.dao.PersonDao;
 import com.example.demo.model.Person;
 
+import java.util.List;
+
 @Service
 public class PersonService {
 
@@ -19,5 +21,9 @@ public class PersonService {
 
     public int addPerson(Person person) {
         return personDao.insertPerson(person);
+    }
+
+    public List<Person> getAllPeople() {
+        return personDao.selectAllPeople();
     }
 }
