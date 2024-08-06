@@ -1,0 +1,14 @@
+Creating a cURL list for testing (didn't feel safe to upload my postman export, sorry).
+
+List people
+curl --location 'localhost:8080/api/v1/person'
+
+Dt person
+curl --location 'localhost:8080/api/v1/person/:uuid'
+
+Add person
+curl --location 'localhost:8080/api/v1/person' \
+--header 'Content-Type: application/json' \
+--data '{
+    "name": "Anna Jones"
+}'
