@@ -4,8 +4,11 @@ import java.util.List;
 import java.util.Optional;
 import java.util.UUID;
 
+import org.springframework.stereotype.Repository;
+
 import com.example.demo.model.Person;
 
+@Repository("postgres")
 public class PersonDataAccessService implements PersonDao {
 
     @Override
@@ -20,7 +23,7 @@ public class PersonDataAccessService implements PersonDao {
 
     @Override
     public List<Person> selectAllPeople() {
-        return null;
+        return List.of(new Person(UUID.randomUUID(), "FROM POSTGRES DB"));
     }
 
     @Override
