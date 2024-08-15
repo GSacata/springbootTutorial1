@@ -1,1 +1,6 @@
-spring.application.name=demo
+app:
+  datasource:
+    jdbc-url: jdbc:postgresql://localhost:5432/spring-boot-postgres-db
+    username: postgres
+    password: gsacata
+    pool-size: 30
