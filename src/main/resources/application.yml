@@ -1,6 +1,12 @@
 app:
   datasource:
-    jdbc-url: jdbc:postgresql://localhost:5432/spring-boot-postgres-db
+    jdbc-url: jdbc:postgresql://localhost:5432/spring_boot_postgres_db
     username: postgres
     password: gsacata
     pool-size: 30
+
+spring:
+  flyway:
+    enabled: true
+    locations: classpath:db/migration
+    baseline-on-migrate: true
