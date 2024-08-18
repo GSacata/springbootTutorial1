@@ -27,7 +27,12 @@ public class PersonDataAccessService implements PersonDao {
 
     @Override
     public int insertPerson(UUID id, Person person) {
-        return 0;
+        final String sql = "INSERT INTO person (id, name) VALUES ()";
+        return jdbcTemplate.update(sql, (resultSet, i) -> {
+            UUID id = UUID.randomUUID();
+            String name = person.getName();
+            return new Person(id, name);
+        })
     }
 
     @Override
